@@ -1,0 +1,19 @@
+<html>
+    <head></head>
+    <body>
+        <%- include('./nav.ejs') %>
+        <h2> All Vehicles </h2>
+        <table>
+        <% if (vehicles.length > 0) { %>
+            <% vehicles.forEach(singleVehicle => { %>
+                <tr>
+                    <td> Name : <%= singleVehicle.name %> </td>
+                    <td> <a href="/vehicles/<%= singleVehicle._id %>">View Details</a></td>
+                </tr>
+            <% }) %>
+        <% } else { %>
+            <tr><td>No vehicles found</td></tr>
+        <% } %>
+        </table>
+    </body>
+</html>

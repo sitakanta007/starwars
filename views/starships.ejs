@@ -1,0 +1,19 @@
+<html>
+    <head></head>
+    <body>
+        <%- include('./nav.ejs') %>
+        <h2> All Starships </h2>
+        <table>
+        <% if (starships.length > 0) { %>
+            <% starships.forEach(singleStarship => { %>
+                <tr>
+                    <td> Name : <%= singleStarship.name %> </td>
+                    <td> <a href="/starships/<%= singleStarship._id %>">View Details</a></td>
+                </tr>
+            <% }) %>
+        <% } else { %>
+            <tr><td>No starships found</td></tr>
+        <% } %>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,50 @@
+<html>
+    <head></head>
+    <body>
+        <%- include('./nav.ejs') %>
+        <h2> Vehicle Details </h2>
+        <table>
+            <tr>
+                <td>Name : </td>
+                <td> <%= vehicle.name %> </td>
+            </tr>
+            <tr>
+                <td>Model : </td>
+                <td> <%= vehicle.model %> </td>
+            </tr>
+            <tr>
+                <td>Manufacturer : </td>
+                <td> <%= vehicle.manufacturer %> </td>
+            </tr>
+            <tr>
+                <td>Crew : </td>
+                <td> <%= vehicle.crew %> </td>
+            </tr>
+            <tr>
+                <td>Passengers : </td>
+                <td> <%= vehicle.passengers %> </td>
+            </tr>
+            <tr>
+                <td>Cargo Capacity : </td>
+                <td> <%= vehicle.cargo_capacity %> </td>
+            </tr>
+            <tr>
+                <td>Vehicle Class : </td>
+                <td> <%= vehicle.vehicle_class %> </td>
+            </tr>
+            <tr>
+                <td><b>Count : </b></td>
+                <td><b><%= vehicle.count %> </b></td>
+            </tr>
+            <tr>
+                <td>Update Count : </td>
+                <td>
+                    <form action='/vehicles/<%= vehicle._id %>' method='post'>
+                        <input class="count" name="count" value="" />
+                        <button class="update">Submit</button>
+                    </form>  
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
